@@ -14,7 +14,7 @@ function setup() {
 
   for (var i = 0; i < x.length; i++) {
     var getal = (round(random(0,9)));
-
+    
     getallen.push(getal);
 
   }
@@ -25,7 +25,7 @@ function setup() {
     slots.push(slot);
 
   }
-
+  
 }
 
 
@@ -40,6 +40,16 @@ function draw() {
 
   for(var i = 0; i < slots.length; i++) {
     slots[i].show();
+  }
+
+  if (getallen[0] === getallen[1]){
+    if(getallen[1] === getallen[2]){
+      fill (255, 255, 50);
+      rect(390, 30, 500, 150);
+      textSize(100);
+      fill ("red");
+      text("WINNER", 440, 140);
+    }
   }
 
 }
