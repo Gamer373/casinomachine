@@ -1,19 +1,23 @@
 class Slot {
     x;
     y;
-    nummer;
-
-    constructor(x_, y_, nummer){
-        this.x = x_;
-        this.yy = y_;
-        nummer = random(0-9);
-
+    getal;
+    constructor(x, getal){
+        this.x = x;
+        this.getal = getal;
 
     }
-    
+
+
     show(){
-        fill(0, 255, 0);
-        Rect(this.x, this.y, 50, 50);
+        fill(0, 255, 255);
+        rect(this.x, 100, 300, 500);
+        
+
+
+        fill(0, 0, 0);
+        textSize(400);
+        text(this.getal, this.x + 50, 500);
     }
 
 

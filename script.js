@@ -3,12 +3,29 @@
  * de code in deze functie wordt één keer uitgevoerd door
  * de p5 library, zodra het spel geladen is in de browser
  */
+
+var slots = [];
+var x = [50, 490, 930];
+var getallen = [];
+
 function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
 
-  // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  for (var i = 0; i < x.length; i++) {
+    var getal = (round(random(0,9)));
+
+    getallen.push(getal);
+
+  }
+
+  for (var i = 0; i < x.length; i++) {
+    var slot = new Slot(x[i], getallen[i]);
+
+    slots.push(slot);
+
+  }
+
 }
 
 
@@ -19,8 +36,10 @@ function setup() {
  */
 function draw() {
   // stel vulkleur in
-  fill(100, 100, 255);
+  background('blue');
 
-  // teken een cirkel
-  ellipse(50,50,80,80);
+  for(var i = 0; i < slots.length; i++) {
+    slots[i].show();
+  }
+
 }
